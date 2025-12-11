@@ -1,44 +1,33 @@
 # Project Guidelines and Tasks
 
-This document outlines the tasks and structure for a Python project. It's divided into three main sections: **Basic Exercises**, **Project & Module Work**, and **Practical Git Workflow**. Use the table of contents below to jump to different sections.
+This document outlines the tasks and structure for the **Product Management System** Python project. It is divided into three main sections: **Basic Exercises**, **Project & Module Work**, and **Practical Git Workflow**. Use the table of contents below to jump to different sections.
 
 ### Table of Contents
-* [Part 1. Basic Exercises]
-* [Part 2. Project & Module Work]
-* [Part 3. Practical Git Workflow]
+* [Part 1. Basic Exercises](#part-1-basic-exercises)
+* [Part 2. Project & Module Work](#part-2-project-module-work)
+
 ---
 
 ## Part 1. Basic Exercises
 
-This section focuses on foundational programming tasks.
+[cite_start]This section focuses on implementing the core logic functions for managing inventory [cite: 5-9].
 
-* Create a function that takes a **string** as an argument and prints it to the console.
-* Write a function that accepts a **string** and prints information about it (e.g., whether all letters are uppercase, all lowercase, or mixed case).
-* Using a **list comprehension**, create a list of the uppercase letters from the word "smogtether".
-* Create a **generator** that alternately returns the words "Even" and "Odd".
+* Create a function `input_product` that allows the user to input a **product name**, **price**, and **stock quantity**. [cite_start]Store this data in a dictionary [cite: 12-14].
+* [cite_start]Write a function `calculate_stock_value` that calculates the total value of the inventory (Formula: `Price * Stock`) and prints it to the console[cite: 27].
+* [cite_start]Implement a function `calculate_discount` that applies a **5% discount** to products with a stock quantity of **less than 10 units**[cite: 33, 37].
+* [cite_start]Create a **recursive function** `print_product_names` to display the list of all available products[cite: 42].
+* [cite_start]Create a **recursive function** `find_product_by_name` to search for a specific product and display its details (Price and Stock) or report if not found[cite: 54, 60].
 
 ---
 
 ## Part 2. Project & Module Work
 
-This section involves structuring the code from Part 1 into a modular project.
+[cite_start]This section involves structuring the code from Part 1 into a modular project[cite: 10].
 
-* Combine all the previous tasks into a structured project with the following modules:
-    * A module for the **string functions**.
-    * A module for the **generator**.
-    * A module with **example code** to run the functions.
-* Add **error handling**: if a function receives a non-string type, it should print an error message.
-
----
-
-## Part 3. Practical Git Workflow
-
-This section is all about applying a standard Git workflow.
-
-* Create a **local Git repository** and perform the work in several branches:
-    * `feature/functions` — for implementing the string functions.
-    * `feature/generator` — for the generator.
-    * `tests` — for the unit tests.
-* Make at least **three commits** in each branch.
-* Write **unit tests** (for example, for the string functions and the generator) and verify that they pass.
-* **Merge** the branches into `main` and create **project versions** (e.g., v0.1).
+* [cite_start]Combine all the previous tasks into a structured project with the following modules [cite: 70-85]:
+    * `data_input.py`: A module containing the input logic and the `demo` data generation.
+    * `calculations.py`: A module for the **stock value** and **discount** formulas.
+    * `general.py`: A module for the **recursive functions** (list display and search).
+    * `main.py`: The entry point that imports functions and manages the program flow.
+* Add **error handling**: ensure the program handles invalid inputs (e.g., if a user enters text instead of a number for the price) using `try-except` blocks.
+* Implement an **infinite loop** in the `main.py` file so the user can perform multiple searches until they type `'exit'`.
